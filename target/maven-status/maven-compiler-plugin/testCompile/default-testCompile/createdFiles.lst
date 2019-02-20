@@ -1,0 +1,6 @@
+TestCaseTest.class
+TestResultTest.class
+com\mycompany\app\my\WhiteBoxTests.class
+com\mycompany\app\my\BlackBoxTests.class
+JunitTestSuite.class
+TestRunner.class

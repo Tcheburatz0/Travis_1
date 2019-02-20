@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainForm.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Maven StrHelper</a> &gt; <a href="index.source.html" class="el_package">com.mycompany.app.my</a> &gt; <span class="el_source">MainForm.java</span></div><h1>MainForm.java</h1><pre class="source lang-java linenums">package com.mycompany.app.my;
+
+import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+public class MainForm {
+    private JTextField txbInput;
+    private JButton btnParse;
+    public JPanel mainPanel;
+    private JLabel lblInfo;
+    private JTextPane txtOutPut;
+    private JButton Clear;
+
+
+    private void createUIComponents() {
+
+        // TODO: place custom component creation code here
+<span class="nc" id="L22">    }</span>
+
+    public class BtnParseClicked implements ActionListener {
+
+<span class="nc" id="L26">        public BtnParseClicked() {</span>
+
+<span class="nc" id="L28">        }</span>
+
+        /**
+         * Invoked when an action occurs.
+         *
+         * @param e
+         */
+        @Override
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L37">            StrHelper strHelper = new StrHelper();</span>
+<span class="nc" id="L38">            strHelper.GetFrquency(txbInput.getText());</span>
+<span class="nc" id="L39">            txtOutPut.setText(strHelper.toString());</span>
+<span class="nc" id="L40">        }</span>
+    }
+
+<span class="nc" id="L43">    public class TxbInputTextChanged extends JFrame implements ActionListener {</span>
+
+        /**
+         * Invoked when an action occurs.
+         *
+         * @param e
+         */
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+<span class="nc" id="L53">        }</span>
+    }
+
+<span class="nc" id="L56">    public MainForm() {</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">        btnParse.setEnabled(txbInput.getText().length() != 0);</span>
+<span class="nc" id="L58">        btnParse.addActionListener(new BtnParseClicked());</span>
+<span class="nc" id="L59">        txbInput.getDocument().addDocumentListener(</span>
+<span class="nc" id="L60">                new DocumentListener() {</span>
+                    public void changedUpdate(DocumentEvent e) {
+<span class="nc" id="L62">                        disableTxb();</span>
+<span class="nc" id="L63">                    }</span>
+
+                    public void removeUpdate(DocumentEvent e) {
+<span class="nc" id="L66">                        disableTxb();</span>
+<span class="nc" id="L67">                    }</span>
+
+                    public void insertUpdate(DocumentEvent e) {
+<span class="nc" id="L70">                        disableTxb();</span>
+<span class="nc" id="L71">                    }</span>
+
+                    public void disableTxb() {
+<span class="nc bnc" id="L74" title="All 2 branches missed.">                        btnParse.setEnabled(txbInput.getText().length() != 0);</span>
+<span class="nc" id="L75">                    }</span>
+                }
+        );
+<span class="nc" id="L78">        Clear.addActionListener(new ActionListener() {</span>
+            @Override
+            public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L81">                txbInput.setText(&quot;&quot;);</span>
+<span class="nc" id="L82">                txtOutPut.setText(&quot;&quot;);</span>
+<span class="nc" id="L83">            }</span>
+        });
+<span class="nc" id="L85">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
