@@ -125,7 +125,7 @@
             <configuration>
                 <useFile>false</useFile>
                 <includes>
-                    <include>**/*Tests.java</include>
+                    <include>**/*TestRunner.java</include>
                 </includes>
             </configuration>
         </plugin>
