@@ -5,7 +5,6 @@ install: true
 script:
 - ./mvnw clean install
 - bash <(curl -s https://codecov.io/bash)
-- mvn test -B
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
