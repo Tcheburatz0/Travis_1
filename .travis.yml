@@ -7,7 +7,7 @@ install: true
 sudo: false
   
 script:
-- "mvn cobertura:cobertura"
+- mvn cobertura:cobertura
 - ./mvnw clean install
 - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 - mvn test -B
