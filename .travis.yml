@@ -3,18 +3,3 @@ jdk: oraclejdk8
 install: true
 
 
-
-sudo: false
-  
-script: mvn cobertura:cobertura & ./mvnw clean install &  mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V & mvn test -B
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash) -t 3e4a33bb-a065-4471-81f3-15a6aa35d5ce
-
-
-  notifications:
-    email:
-      recipients:
-        - cniko446@gmail.com
-        on_success: never # default: change
-        on_failure: always # default: always
